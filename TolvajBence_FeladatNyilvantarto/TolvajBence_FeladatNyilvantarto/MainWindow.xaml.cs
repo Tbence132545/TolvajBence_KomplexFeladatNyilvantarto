@@ -58,5 +58,24 @@ namespace TolvajBence_FeladatNyilvantarto
            
         }
 
+        private void modosito_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (feladatok.SelectedItems.Count > 0 && feladatSzovege.Text!="")
+            {
+                feladatokListaja[feladatok.SelectedIndex].Content = feladatSzovege.Text;
+                feladatok.Items.Refresh();
+            }
+            if (feladatok.SelectedItems.Count < 0)
+            {
+                MessageBox.Show("Nincs kijelölve egy feladat se!");
+                return;
+            }
+            if (feladatSzovege.Text == "")
+            {
+                MessageBox.Show("Nincs szöveg megadva!");
+                return;
+            }
+
+        }
     }
 }

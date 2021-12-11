@@ -11,8 +11,8 @@
         <Label Content="Feladatok listája" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" Width="122"></Label>
         <TextBox x:Name="feladatSzovege" HorizontalAlignment="Left" Margin="317,32,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
         <Label Content="Feladat szövege:" HorizontalAlignment="Left" Margin="313,1,0,0" VerticalAlignment="Top" Width="122"/>
-        <Button x:Name="uj_btn" Content="Új hozzáadása" HorizontalAlignment="Left" Margin="317,55,0,0" VerticalAlignment="Top" Width="159" />
-        <Button x:Name="modosito_btn" Content="Kijelölt feladat módosítása" HorizontalAlignment="Left" Margin="317,79,0,0" VerticalAlignment="Top" Width="159" />
+        <Button x:Name="uj_btn" Content="Új hozzáadása" HorizontalAlignment="Left" Margin="317,55,0,0" VerticalAlignment="Top" Width="159" Click="uj_btn_Click" />
+        <Button x:Name="modosito_btn" Content="Kijelölt feladat módosítása" HorizontalAlignment="Left" Margin="317,79,0,0" VerticalAlignment="Top" Width="159" Click="modosito_btn_Click" />
         <Button x:Name="torol_btn" Content="Kijelölt feladat törlése" HorizontalAlignment="Left" Margin="317,104,0,0" VerticalAlignment="Top" Width="159" />
         <Label  Content="Törölt elemek" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" Width="122"/>
         <ListBox x:Name="toroltFeladatok" Margin="10,197,218,10"/>
