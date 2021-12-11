@@ -113,5 +113,19 @@ namespace TolvajBence_FeladatNyilvantarto
 
             }
         }
+
+        private void veglegTorol_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (toroltFeladatok.SelectedItems.Count > 0)
+            {
+                toroltFeladatokListaja.Remove(toroltFeladatokListaja[toroltFeladatok.SelectedIndex]);
+                toroltFeladatok.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Nincs kijelölve egy feladat se!");
+
+            }
+        }
     }
 }

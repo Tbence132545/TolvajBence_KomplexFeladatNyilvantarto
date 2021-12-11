@@ -17,7 +17,7 @@
         <Label  Content="Törölt elemek" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" Width="122"/>
         <ListBox x:Name="toroltFeladatok" Margin="10,197,218,10"/>
         <Button x:Name="visszaallit_btn" Content="Kijelölt feladat visszállítása" HorizontalAlignment="Left" Margin="317,197,0,0" VerticalAlignment="Top" Width="159" Click="visszaallit_btn_Click" />
-        <Button x:Name="veglegTorol_btn" Content="Kijelölt feladat végleg törlése" HorizontalAlignment="Left" Margin="317,222,0,0" VerticalAlignment="Top" Width="159"/>
+        <Button x:Name="veglegTorol_btn" Content="Kijelölt feladat végleg törlése" HorizontalAlignment="Left" Margin="317,222,0,0" VerticalAlignment="Top" Width="159" Click="veglegTorol_btn_Click"/>
         <Label Content="Tolvaj Bence" FontSize="8" HorizontalAlignment="Left" Margin="422,255,0,0" VerticalAlignment="Top" Width="54"/> 
     </Grid>
 </Window>
