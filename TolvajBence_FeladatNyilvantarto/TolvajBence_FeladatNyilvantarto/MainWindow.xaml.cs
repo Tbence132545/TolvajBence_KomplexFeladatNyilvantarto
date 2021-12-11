@@ -97,5 +97,21 @@ namespace TolvajBence_FeladatNyilvantarto
 
             }
         }
+
+        private void visszaallit_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (toroltFeladatok.SelectedItems.Count > 0)
+            {
+                feladatokListaja.Add(toroltFeladatokListaja[toroltFeladatok.SelectedIndex]);
+                toroltFeladatokListaja.Remove(toroltFeladatokListaja[toroltFeladatok.SelectedIndex]);
+                feladatok.Items.Refresh();
+                toroltFeladatok.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Nincs kijelölve egy feladat se!");
+
+            }
+        }
     }
 }
