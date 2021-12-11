@@ -18,6 +18,6 @@
         <ListBox x:Name="toroltFeladatok" Margin="10,197,218,10"/>
         <Button x:Name="visszaallit_btn" Content="Kijelölt feladat visszállítása" HorizontalAlignment="Left" Margin="317,197,0,0" VerticalAlignment="Top" Width="159" />
         <Button x:Name="veglegTorol_btn" Content="Kijelölt feladat végleg törlése" HorizontalAlignment="Left" Margin="317,222,0,0" VerticalAlignment="Top" Width="159"/>
-        <Label Content="Tolvaj Bence" FontSize="8" HorizontalAlignment="Left" Margin="422,255,0,0" VerticalAlignment="Top" Width="54"/>
+        <Label Content="Tolvaj Bence" FontSize="8" HorizontalAlignment="Left" Margin="422,255,0,0" VerticalAlignment="Top" Width="54"/> 
     </Grid>
 </Window>
