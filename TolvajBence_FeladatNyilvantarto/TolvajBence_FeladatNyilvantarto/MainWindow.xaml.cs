@@ -25,17 +25,20 @@ namespace TolvajBence_FeladatNyilvantarto
         {
             InitializeComponent();
             feladatok.ItemsSource = feladatokListaja;
+            toroltFeladatok.ItemsSource = toroltFeladatokListaja;
 
         }
         List<CheckBox> feladatokListaja = new List<CheckBox>();
+        List<CheckBox> toroltFeladatokListaja = new List<CheckBox>();
 
         private void uj_btn_Click(object sender, RoutedEventArgs e)
         {
             if (feladatSzovege.Text != "") { 
             CheckBox uj = new CheckBox();
-            uj.Content = feladatSzovege.Text;
             uj.Checked += new RoutedEventHandler(CheckEvent);
             uj.Unchecked += new RoutedEventHandler(CheckEvent);
+            uj.Content = feladatSzovege.Text;
+           
             feladatokListaja.Add(uj);
             feladatok.Items.Refresh();
             }
@@ -76,6 +79,23 @@ namespace TolvajBence_FeladatNyilvantarto
                 return;
             }
 
+        }
+
+        private void torol_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (feladatok.SelectedItems.Count > 0)
+            {
+                toroltFeladatokListaja.Add(feladatokListaja[feladatok.SelectedIndex]);
+                feladatokListaja.Remove(feladatokListaja[feladatok.SelectedIndex]);
+                feladatok.Items.Refresh();
+                toroltFeladatok.Items.Refresh();
+
+            }
+            else
+            {
+                MessageBox.Show("Nincs kijelölve egy feladat se!");
+
+            }
         }
     }
 }
