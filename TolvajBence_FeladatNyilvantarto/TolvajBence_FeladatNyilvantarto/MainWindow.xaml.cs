@@ -24,12 +24,57 @@ namespace TolvajBence_FeladatNyilvantarto
         public MainWindow()
         {
             InitializeComponent();
+            Application.Current.Exit += Application_Exit;
+            Betoltes();
             feladatok.ItemsSource = feladatokListaja;
             toroltFeladatok.ItemsSource = toroltFeladatokListaja;
 
+
         }
-        List<CheckBox> feladatokListaja = new List<CheckBox>();
-        List<CheckBox> toroltFeladatokListaja = new List<CheckBox>();
+
+        private void Betoltes()
+        {
+            foreach (var x in File.ReadAllLines(@"feladatok.txt"))
+            {
+                string[] tempArray = x.Split(" ");
+                CheckBox tempCheckbox = new CheckBox();
+                tempCheckbox.Content = tempArray[0];
+                if (tempArray[1] == "False")
+                {
+                    tempCheckbox.IsChecked = false;
+                }
+                else
+                {
+                    tempCheckbox.IsChecked = true;
+                    tempCheckbox.Foreground = Brushes.Gray;
+                    tempCheckbox.FontStyle = FontStyles.Italic;
+                }
+                feladatokListaja.Add(tempCheckbox);
+
+
+            }
+            foreach (var x in File.ReadAllLines(@"toroltFeladatok.txt"))
+            {
+                string[] tempArray = x.Split(" ");
+                CheckBox tempCheckbox = new CheckBox();
+                tempCheckbox.Content = tempArray[0];
+                if (tempArray[1] == "False")
+                {
+                    tempCheckbox.IsChecked = false;
+                }
+                else
+                {
+                    tempCheckbox.IsChecked = true;
+                    tempCheckbox.Foreground = Brushes.Red;
+                }
+                toroltFeladatokListaja.Add(tempCheckbox);
+
+
+            }
+        }
+
+        static List<CheckBox> feladatokListaja = new List<CheckBox>();
+        static List<CheckBox> toroltFeladatokListaja = new List<CheckBox>();
 
         private void uj_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -127,5 +172,22 @@ namespace TolvajBence_FeladatNyilvantarto
 
             }
         }
+        private static void FeladatTxtFrissites(string fajlnev, List<CheckBox> lista)
+        {
+            using (TextWriter tw = new StreamWriter(@fajlnev))
+            {
+                foreach (var x in lista)
+                {
+                    tw.WriteLine(x.Content + " " + x.IsChecked);
+                }
+            }
+        }
+        private static void Application_Exit(object sender, ExitEventArgs e)
+        {
+
+            FeladatTxtFrissites("feladatok.txt", feladatokListaja);
+            FeladatTxtFrissites("toroltFeladatok.txt", toroltFeladatokListaja);
+        }
+       
     }
 }
