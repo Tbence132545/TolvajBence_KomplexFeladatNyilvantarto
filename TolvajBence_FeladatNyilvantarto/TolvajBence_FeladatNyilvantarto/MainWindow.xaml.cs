@@ -188,6 +188,11 @@ namespace TolvajBence_FeladatNyilvantarto
             FeladatTxtFrissites("feladatok.txt", feladatokListaja);
             FeladatTxtFrissites("toroltFeladatok.txt", toroltFeladatokListaja);
         }
-       
+
+        private void feladatok_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            feladatSzovege.Text = Convert.ToString(feladatokListaja[feladatok.SelectedIndex].Content);
+        }
     }
 }

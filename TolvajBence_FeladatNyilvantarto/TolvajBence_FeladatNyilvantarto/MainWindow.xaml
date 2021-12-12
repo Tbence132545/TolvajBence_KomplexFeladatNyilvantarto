@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="338" Width="530">
     <Grid>
-        <ListBox x:Name="feladatok" Margin="10,32,218,156"/>
+        <ListBox x:Name="feladatok" Margin="10,32,218,156" SelectionChanged="feladatok_SelectionChanged"/>
         <Label Content="Feladatok listája" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" Width="122"></Label>
         <TextBox x:Name="feladatSzovege" HorizontalAlignment="Left" Margin="317,32,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
         <Label Content="Feladat szövege:" HorizontalAlignment="Left" Margin="313,1,0,0" VerticalAlignment="Top" Width="122"/>
@@ -18,6 +18,6 @@
         <ListBox x:Name="toroltFeladatok" Margin="10,197,218,10"/>
         <Button x:Name="visszaallit_btn" Content="Kijelölt feladat visszállítása" HorizontalAlignment="Left" Margin="317,197,0,0" VerticalAlignment="Top" Width="159" Click="visszaallit_btn_Click" />
         <Button x:Name="veglegTorol_btn" Content="Kijelölt feladat végleg törlése" HorizontalAlignment="Left" Margin="317,222,0,0" VerticalAlignment="Top" Width="159" Click="veglegTorol_btn_Click"/>
-        <Label Content="Tolvaj Bence" FontSize="8" HorizontalAlignment="Left" Margin="422,255,0,0" VerticalAlignment="Top" Width="54"/> 
+        <Label Content="Tolvaj Bence @ 2021" FontSize="8" HorizontalAlignment="Left" Margin="422,255,0,0" VerticalAlignment="Top" Width="98"/>
     </Grid>
 </Window>
